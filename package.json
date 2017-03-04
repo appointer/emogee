@@ -1,0 +1,26 @@
+{
+  "name": "emogee",
+  "version": "1.0.0",
+  "description": "A experimental emoji library which uses platform default emojis behind a slim style syntax.",
+  "homepage": "https://github.com/appointer/emogee#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/appointer/emogee.git"
+  },
+  "keywords": [
+    "emoji",
+    "smiley",
+    "emogee",
+    "mood",
+    "icon"
+  ],
+  "author": "Felix Rudat",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/appointer/emogee/issues"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0"
+  }
+}

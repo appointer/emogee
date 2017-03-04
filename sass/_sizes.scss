@@ -1,0 +1,22 @@
+/* makes the font 33% larger relative to the icon container */
+.emoji-lg {
+  font-size: (4em / 3);
+  line-height: (3em / 4);
+  vertical-align: -15%;
+}
+
+.emoji-2x {
+  font-size: 2em;
+}
+
+.emoji-3x {
+  font-size: 3em;
+}
+
+.emoji-4x {
+  font-size: 4em;
+}
+
+.emoji-5x {
+  font-size: 5em;
+}
