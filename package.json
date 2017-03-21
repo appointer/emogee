@@ -1,6 +1,6 @@
 {
   "name": "emogee",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A experimental emoji library which uses platform default emojis behind a slim style syntax.",
   "homepage": "https://github.com/appointer/emogee#readme",
   "repository": {
