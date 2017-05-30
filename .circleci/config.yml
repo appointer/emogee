@@ -1,0 +1,43 @@
+version: 2
+jobs:
+  build:
+    working_directory: /home/circleci/emogee
+    docker:
+      - image: circleci/node:latest
+      - image: circleci/python:latest
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "yarn.lock" }}
+      - run:
+          name: Install python pip
+          command: |
+            wget https://bootstrap.pypa.io/get-pip.py
+            sudo python get-pip.py
+      - run:
+          name: Install python dependencies via pip
+          command: sudo pip install -r scripts/requirements.txt
+      - run:
+          name: Install node dependencies via yarn
+          command: yarn install
+      - run:
+          name: Install gulp task runner
+          command: sudo yarn global add gulp-cli
+      - run:
+          name: Run font build process
+          command: gulp
+      - save_cache:
+          key: dependency-cache-{{ checksum "yarn.lock" }}
+          paths:
+            - "~/.yarn-cache"
+            - .node_modules
+      - store_artifacts:
+          path: artifacts
+          destination: /
+      - deploy:
+          name: Run a npm publish
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
+              npm publish
+            fi

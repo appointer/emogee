@@ -1,4 +1,4 @@
-# 👋🏼 emogee
+# 👋🏼 emogee <a href="https://circleci.com/gh/appointer/emogee"><img src="https://circleci.com/gh/appointer/emogee.svg?style=svg" alt="Build Status"></a>
 
 This is an experimental CSS library which maps all emojis listed on **unicode.org**.
 
